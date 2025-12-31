@@ -1,9 +1,15 @@
 import Button from '@mui/material/Button'
+import Typography from '@mui/material/Typography'
 
 function App() {
   return (
     <>
       <div>Hello, Nguyen Van Dat</div>
+
+      <Typography variant="body2" color="text.secondary">
+        Nguyen Van Dat Typography Body2 - text.secondary
+      </Typography>
+
       <Button variant="text">Text</Button>
       <Button variant="contained">Contained</Button>
       <Button variant="outlined">Outlined</Button>
