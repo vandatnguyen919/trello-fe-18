@@ -10,6 +10,19 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"/>
   </head>
   <body>
+  <!-- Add this script BEFORE root div to prevent flickering -->
+    <script>
+      (function() {
+        try {
+          const mode = localStorage.getItem('mui-mode') || 'system';
+          let colorScheme = mode;
+          if (mode === 'system') {
+            colorScheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          }
+          document.documentElement.setAttribute('class', colorScheme);
+        } catch (e) {}
+      })();
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
