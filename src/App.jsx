@@ -1,5 +1,3 @@
-import Button from '@mui/material/Button'
-import Typography from '@mui/material/Typography'
 import { useColorScheme } from '@mui/material/styles'
 import InputLabel from '@mui/material/InputLabel'
 import MenuItem from '@mui/material/MenuItem'
@@ -8,22 +6,40 @@ import Select from '@mui/material/Select'
 import LightModeIcon from '@mui/icons-material/LightMode'
 import DarkModeIcon from '@mui/icons-material/DarkMode'
 import SettingsBrightnessIcon from '@mui/icons-material/SettingsBrightness'
-import {Box} from "@mui/material";
+import Box from '@mui/material/Box'
+import Container from '@mui/material/Container'
 
 function App() {
   return (
-    <>
-      <SelectSmall />
-      <div>Hello, Nguyen Van Dat</div>
-
-      <Typography variant="body2" color="text.secondary">
-        Nguyen Van Dat Typography Body2 - text.secondary
-      </Typography>
-
-      <Button variant="text">Text</Button>
-      <Button variant="contained">Contained</Button>
-      <Button variant="outlined">Outlined</Button>
-    </>
+    <Container disableGutters maxWidth={false} sx={{ height: '100vh', backgroundColor: 'primary.main' }}>
+      <Box sx={{
+        backgroundColor: 'primary.light',
+        width: '100%',
+        height: (theme) => theme.trello.appBarHeight,
+        display: 'flex',
+        alignItems: 'center'
+      }}>
+        <SelectSmall />
+      </Box>
+      <Box sx={{
+        backgroundColor: 'primary.dark',
+        width: '100%',
+        height: (theme) => theme.trello.boardBarHeight,
+        display: 'flex',
+        alignItems: 'center'
+      }}>
+        Board Bar
+      </Box>
+      <Box sx={{
+        backgroundColor: 'background.default',
+        width: '100%',
+        height: (theme) => `calc(100vh - ${theme.trello.appBarHeight} -  ${theme.trello.boardBarHeight})`,
+        display: 'flex',
+        alignItems: 'center'
+      }}>
+        Board Content
+      </Box>
+    </Container>
   )
 }
 
