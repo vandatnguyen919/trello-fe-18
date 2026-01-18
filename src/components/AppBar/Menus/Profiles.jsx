@@ -30,7 +30,7 @@ function Profiles() {
         onClick={handleClick}
         sx={{ padding: 0 }}
       >
-        <Avatar sx={{ width: 30, height: 30 }}>D</Avatar>
+        <Avatar sx={{ width: 34, height: 34 }}>D</Avatar>
       </IconButton>
       <Menu
         id="basic-menu-profiles"

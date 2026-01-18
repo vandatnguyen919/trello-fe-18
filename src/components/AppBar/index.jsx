@@ -15,10 +15,11 @@ import Badge from '@mui/material/Badge'
 import Tooltip from '@mui/material/Tooltip'
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline'
 import Profiles from '~/components/AppBar/Menus/Profiles.jsx'
+import LibraryAddIcon from '@mui/icons-material/LibraryAdd'
 
 function AppBar() {
   return (
-    <Box px={2} sx={{
+    <Box sx={{
       width: '100%',
       height: (theme) => theme.trello.appBarHeight,
       display: 'flex',
@@ -26,7 +27,8 @@ function AppBar() {
       justifyContent: 'space-between',
       backgroundColor: 'background.default',
       gap: 2,
-      overflowX: 'auto'
+      overflowX: 'auto',
+      paddingX: 2
     }}>
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
         <AppsIcon sx={{ color: 'primary.main' }} />
@@ -41,7 +43,7 @@ function AppBar() {
           <Templates />
         </Box>
 
-        <Button variant="outlined">Create</Button>
+        <Button variant="outlined" startIcon={<LibraryAddIcon />}>Create</Button>
       </Box>
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
         <TextField id="outlined-search" label="Search..." type="search" size="small" sx={{ minWidth: 120 }} />
